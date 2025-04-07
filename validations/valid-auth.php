@@ -13,7 +13,6 @@ function register($userData)
 function login($username, $password)
 {
     global $pdo;
-    //get user by email
     $sql = "SELECT * FROM `users` WHERE username=:username LIMIT 1";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([":username" => $username]);
@@ -25,7 +24,6 @@ function login($username, $password)
         return false;
 
     }
-    // return false;
 }
 
 function logout()
